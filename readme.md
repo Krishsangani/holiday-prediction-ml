@@ -11,7 +11,7 @@ This project predicts the best holiday destination based on user preferences usi
 - Responsive and lightweight UI.
 
 ## Tech Stack
-- **Python** (Pandas, NumPy, Scikit-learn)
+- **Python** (Pandas, NumPy, Scikit-learn, Jupyter notebook)
 - **Flask** (for Web UI)
 - **HTML, CSS, JavaScript** (Frontend)
 - **GitHub** (Version Control)
