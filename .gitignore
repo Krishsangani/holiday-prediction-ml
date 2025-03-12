@@ -1,0 +1,10 @@
+*.pkl
+.ipynb_checkpoints
+*.zip
+
+
+# local_testing
+main.ipynb
+Holiday.py
+appy.py
+application.py

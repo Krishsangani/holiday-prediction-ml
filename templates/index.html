@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏝️ Holiday Destination Predictor 🏝️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("{{ url_for('static', filename='Holiday.jpeg') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 650px;
+            width: 90%;
+            text-align: center;
+        }
+        .checkbox-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            text-align: left;
+            padding: 15px 0;
+        }
+        .checkbox-container label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+        input[type="checkbox"] {
+            transform: scale(1.3);
+        }
+        button {
+            background-color: #ff7e5f;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #feb47b;
+        }
+        .highlight {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏖️ Holiday Destination Predictor 🏖️</h1>
+        <form method="post">
+            <div class="checkbox-container">
+                <label><input type="checkbox" name="Peaceful Destination" value="1"> Peaceful Destination 🌿</label>
+                <label><input type="checkbox" name="Beaches" value="1"> Beaches 🏖️</label>
+                <label><input type="checkbox" name="Mountains" value="1"> Mountains ⛰️</label>
+                <label><input type="checkbox" name="Historical Places" value="1"> Historical Places 🏰</label>
+                <label><input type="checkbox" name="Within India" value="1"> Within India 🇮🇳</label>
+                <label><input type="checkbox" name="Outside India" value="1"> Outside India 🌍</label>
+                <label><input type="checkbox" name="Romantic Place" value="1"> Romantic Place ❤️</label>
+                <label><input type="checkbox" name="Kids Place" value="1"> Kids Place 👶</label>
+                <label><input type="checkbox" name="Family Place" value="1"> Family Place 👨‍👩‍👧</label>
+            <label style="display: flex; align-items: center; gap: 10px; font-size: 18px;">⏳ Number of Days: <input type="number" name="Number of Days" min="1" required style="width: 60px; padding: 5px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; text-align: center;"></label>
+            
+            </div>
+            <button type="submit">✨ Find Best Match 🔍 ✨</button>
+        </form>
+        
+        {% if prediction %}
+            <h2>🌟 Recommended Destination: <span class="highlight">{{ prediction }} 🏝️</span></h2>
+            <p>📊 Model Accuracy: <span class="highlight">{{ '%.2f'|format(accuracy) }}%</span></p>
+        {% endif %}
+    </div>
+</body>
+</html>
