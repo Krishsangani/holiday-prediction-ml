@@ -5,6 +5,7 @@ from sklearn.model_selection import KFold, cross_val_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 import joblib
+import matplotlib.pyplot as plt
 
 app = Flask(__name__)
 
